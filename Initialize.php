@@ -11,8 +11,6 @@ if( !defined('TEMPLATEPATH') )
 // Capture the wordpress include and return cached path
 add_filter( 'template_include', function($template){
 
-    $template = Gaunt::make( $template );
-
-    return $template;
+    return Gaunt::make( $template );
 
 },10,1);
