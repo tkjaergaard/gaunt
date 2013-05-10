@@ -44,9 +44,89 @@
 }
 </code></pre>
 
+<p>Require "vendor/autoload.php" in your functions.php or plugin.php</p>
+
+<pre><code>require("vendor/autoload.php");
+</code></pre>
+
 <h3>Docs</h3>
 
-<p>Docs are coming soon..</p>
+<h4>The loop</h4>
+
+<pre><code>@startloop
+    \`\`the_title();\`\`
+    \`\`the_contnet();\`\`
+@endloop
+
+
+@startloop
+    \`\`the_title();\`\`
+    \`\`the_contnet();\`\`
+@noposts
+    &lt;p&gt;No posts yet, sorry..&lt;/p&gt;
+@endloop
+</code></pre>
+
+<h4>Code blocks</h4>
+
+<p>Code blocks is equal to &lt;?php ?&gt;</p>
+
+<pre><code>    \'\'
+         $foo = "bar";
+         $bar = ["a","b","c"];
+    \'\'
+</code></pre>
+
+<h4>Echoing data</h4>
+
+<pre><code>Hello, {{ $user }}.
+
+Hello, {{ $user.name }} // $user['name'];
+
+Hello, {{ $user-&gt;name }}
+
+The current UNIX timestamp is {{ time() }}.
+</code></pre>
+
+<h4>If statements</h4>
+
+<pre><code>@if (count($posts) === 1)
+    I have one post!
+@elseif (count($posts) &gt; 1)
+    I have multiple posts!
+@else
+    I don't have any posts!
+@endif
+</code></pre>
+
+<h4>Loops</h4>
+
+<pre><code>@for ($i = 0; $i &lt; 10; $i++)
+    The current value is {{ $i }}
+@endfor
+
+@foreach ($posts as $post)
+    &lt;p&gt;The title of this post is: {{ $post-&gt;post_title }}&lt;/p&gt;
+@endforeach
+
+@while (true)
+    &lt;p&gt;I'm looping forever.&lt;/p&gt;
+@endwhile
+</code></pre>
+
+<h4>Including sub-views</h4>
+
+<pre><code>@include('view.php')
+
+&lt;?php get_header();?&gt;
+&lt;?php get_footer();?&gt;
+&lt;?php get_sidebar();?&gt;
+</code></pre>
+
+<h4>Comments</h4>
+
+<pre><code>{{-- This comment will not be in the rendered HTML --}}
+</code></pre>
 
 <h3>Examples</h3>
 
