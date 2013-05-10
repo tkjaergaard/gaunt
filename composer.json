@@ -1,0 +1,21 @@
+{
+    "name": "gaunt/gaunt",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "t_kjaergaard",
+            "email": "tkj@tkjaergaard.dk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "Gaunt": ""
+        },
+        "files": ["Initialize.php"]
+    },
+    "target-dir": "Gaunt"
+}
