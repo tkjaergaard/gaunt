@@ -33,7 +33,7 @@
         <section id="main_content">
           <h3>What is Gaunt?</h3>
 
-<p>Gaunt is the simplest template engine written for Wordpress. The engine is heavily inspired and based upon Laravel 4 Blade. It not nearly as heavy and feature-rich as dedicated template engines as Smarty and Twig. But it's help you simplify your theme pages quite a lot.</p>
+<p>Gaunt is the simplest template engine written for Wordpress. The engine is heavily inspired and based upon Laravel 4 Blade. Gaunt is not nearly as heavy and feature-rich as dedicated template engines such as Smarty and Twig. But it helps you simplify your theme pages quite a lot.</p>
 
 <h3>Installation</h3>
 
@@ -47,6 +47,30 @@
 <h3>Docs</h3>
 
 <p>Docs are coming soon..</p>
+
+<h3>Examples</h3>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    @include('header.php')
+
+    @startloop
+        ``the_title();``
+        ``the_content();``
+    @noposts
+        &lt;p&gt;Sorry no posts here..&lt;/p&gt;
+    @endloop
+
+    @include('footer.php')
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
         </section>
 
         <footer>
