@@ -156,7 +156,7 @@ class Gaunt {
      */
     protected function compileArrays($value)
     {
-        $pattern = sprintf('/%s(\s*)(.+?)\.([\w0-9])(\s*)%s/s', $this->contentTags[0], $this->contentTags[1]);
+        $pattern = sprintf('/%s(\s*)?(.+?)\.([\w0-9\.]+)(\s*)?%s(\s*)?/', $this->contentTags[0], $this->contentTags[1]);
         $replace = array();
 
         preg_match_all($pattern, $value, $matches);
